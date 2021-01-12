@@ -26,18 +26,24 @@ namespace War.Objects
             if (Player1.Deck.Count < 1)
             {
                 Console.WriteLine(Player1.Name + " is out of cards! " + Player2.Name + " WINS!");
+                Console.WriteLine(Player2.Name + " now has " + Player2.Deck.Count + " cards");
+                Console.WriteLine("Turns: " + TurnCount );
                 return true;
             }
             else if (Player2.Deck.Count < 1)
             {
                 Console.WriteLine(Player2.Name + " is out of cards! " + Player1.Name + " WINS!");
+                Console.WriteLine(Player1.Name + " now has " + Player1.Deck.Count + " cards");
+                Console.WriteLine("Turns: " + TurnCount);
                 return true;
             }
             else if (TurnCount > 1000)
             {
                 Console.WriteLine("Infinite game! Let's call the whole thing off!");
+                Console.WriteLine(TurnCount + " turns");
                 return true;
             }
+            
             return false;
         }
 

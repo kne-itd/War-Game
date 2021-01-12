@@ -1,4 +1,5 @@
 ﻿using System;
+using War.Objects;
 
 namespace War
 {
@@ -6,7 +7,12 @@ namespace War
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Game game = new Game("Arne", "Bo");
+            while (!game.IsEndOfGame())
+            {
+                game.PlayTurn();
+            }
+            Console.Read();
         }
     }
 }
