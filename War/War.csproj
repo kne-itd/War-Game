@@ -8,4 +8,7 @@
   <ItemGroup>
     <Folder Include="Objects\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WarLibrary\WarLibrary.csproj" />
+  </ItemGroup>
 </Project>

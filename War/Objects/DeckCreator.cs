@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WarLibrary;
 
 namespace War.Objects
 {
@@ -20,32 +21,35 @@ namespace War.Objects
                     });
                 }
             }
-            return Shuffle(cards);
+            //return Shuffle(cards);
+            FisherYatesShuffler shuffler = new FisherYatesShuffler();
+            shuffler.Shuffle(cards);
+            return cards;
         }
 
-        private static Queue<Card> Shuffle(Queue<Card> cards)
-        {
-            //List<Card> ListOfCards = cards.ToList(); // Linq
-            List<Card> ListOfCards = new List<Card>();
-            foreach (var card in cards)
-            {
-                ListOfCards.Add(card);
-            }
-            Random rnd = new Random();
-            for (int i = cards.Count - 1; i > 0; i--)
-            {
-                int k = rnd.Next(i + 1);
-                Card temp = ListOfCards[i];
-                ListOfCards[i] = ListOfCards[k];
-                ListOfCards[k] = temp;
-            }
-            Queue<Card> ShuffledCards = new Queue<Card>();
-            foreach (var card in ListOfCards)   
-            {
-                ShuffledCards.Enqueue(card);
-            }
-            return ShuffledCards;
-        }
+        //private static Queue<Card> Shuffle(Queue<Card> cards)
+        //{
+        //    //List<Card> ListOfCards = cards.ToList(); // Linq
+        //    List<Card> ListOfCards = new List<Card>();
+        //    foreach (var card in cards)
+        //    {
+        //        ListOfCards.Add(card);
+        //    }
+        //    Random rnd = new Random();
+        //    for (int i = cards.Count - 1; i > 0; i--)
+        //    {
+        //        int k = rnd.Next(i + 1);
+        //        Card temp = ListOfCards[i];
+        //        ListOfCards[i] = ListOfCards[k];
+        //        ListOfCards[k] = temp;
+        //    }
+        //    Queue<Card> ShuffledCards = new Queue<Card>();
+        //    foreach (var card in ListOfCards)   
+        //    {
+        //        ShuffledCards.Enqueue(card);
+        //    }
+        //    return ShuffledCards;
+        //}
 
         private static string GetShortName(int value, Suit suit)
         {

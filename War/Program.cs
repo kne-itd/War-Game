@@ -7,7 +7,6 @@ namespace War
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("new branch");
             Game game = new Game("Arne", "Bo");
             while (!game.IsEndOfGame())
             {
