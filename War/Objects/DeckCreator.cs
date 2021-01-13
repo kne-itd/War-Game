@@ -22,9 +22,10 @@ namespace War.Objects
                 }
             }
             //return Shuffle(cards);
+            Queue<Card> ShuffledDeck = new Queue<Card>();
             FisherYatesShuffler shuffler = new FisherYatesShuffler();
-            shuffler.Shuffle(cards);
-            return cards;
+            ShuffledDeck = shuffler.Shuffle(cards);
+            return ShuffledDeck;
         }
 
         //private static Queue<Card> Shuffle(Queue<Card> cards)
@@ -74,7 +75,7 @@ namespace War.Objects
             {
                 output = "A";
             }
-
+            //output += suit;
             output += Enum.GetName(typeof(Suit), suit)[0];
             return output;
         }

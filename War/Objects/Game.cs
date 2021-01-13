@@ -55,6 +55,7 @@ namespace War.Objects
             var player1Card = Player1.Deck.Dequeue();
             var player2Card = Player2.Deck.Dequeue();
 
+            //Step1a: The flipped cards are added to the pool
             Pool.Enqueue(player1Card);
             Pool.Enqueue(player2Card);
 
